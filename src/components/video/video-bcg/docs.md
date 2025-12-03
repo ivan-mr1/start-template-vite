@@ -1,5 +1,5 @@
 ```
-<section class="page__hero hero parrent-video-fon">
+<section class="page__hero hero parent-video-fon">
   <div class="hero__container">
   </div>
   <video class="video-fon" autoplay muted loop>
@@ -7,7 +7,7 @@
   </video>
 </section>
 
-.parrent-video-fon {
+.parent-video-fon {
   position: relative; // задать секции, на которой висит видео
   overflow: hidden;
 

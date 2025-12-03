@@ -13,24 +13,11 @@
 
   &__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
 
     @include adaptive-clamp('column-gap', 40, 20);
     @include adaptive-clamp('min-height', 100, 65);
-  }
-
-  &__logo {
-    position: relative;
-    z-index: 5;
-    font-size: fluid(24, 20);
-    font-weight: 700;
-    color: var(--color-black);
-    transition: var(--transition);
-
-    @include hover {
-      color: var(--color-orange);
-    }
   }
 
   &__overlay {
@@ -43,5 +30,20 @@
   &__actions {
     position: relative;
     z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: rem(15);
+  }
+
+  &__github,
+  &__codewars {
+    --size: #{rem(44)};
+
+    @include square(var(--size));
+
+    @include hover {
+      transform: scale(1.09);
+    }
   }
 }

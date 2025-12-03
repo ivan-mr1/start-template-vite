@@ -1,9 +1,5 @@
 @use '../helpers' as *;
 
-// [class*='page__']:not(
-//   .page__hero,
-//   .page__contacts
-// ) {
-//   padding-top: fluid(80, 20);
-//   padding-bottom: fluid(80, 20);
+// [class*='page__'] {
+//   @include adaptive-clamp('padding-top', 100, 40);
 // }
