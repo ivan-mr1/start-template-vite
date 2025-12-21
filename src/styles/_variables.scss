@@ -31,6 +31,6 @@
   --color-light: #fafaf5;
   --color-orange: #ffa501;
 
-  --border: #{rem(1)} solid var(--color-white);
+  --border: 1px solid var(--color-white);
   --border-radius: #{rem(8)};
 }
