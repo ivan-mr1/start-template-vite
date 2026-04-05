@@ -1,4 +1,4 @@
-import { bodyLock, bodyUnlock } from '@js/function/bodyLock.js';
+import { bodyLock, bodyUnlock } from '@/shared/lib/body-lock/bodyLock';
 
 class Header {
   hiddenHeader = true;
