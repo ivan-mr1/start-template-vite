@@ -1,41 +1,31 @@
 import SassGlob from 'vite-plugin-sass-glob-import';
 import { defineConfig } from 'vite';
 import { sync } from 'glob';
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
-
-const noAttr = () => {
-  return {
-    transformIndexHtml(html) {
-      return html.replaceAll(' crossorigin', '');
-    },
-  };
-};
+import injectHTML from 'vite-plugin-html-inject';
+import { imageOptimizerPlugin } from './vite-plugins/image-optimizer';
+import { removeAttributes } from './vite-plugins/removeAttributes';
+import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
   plugins: [
+    injectHTML(),
     SassGlob(),
-    noAttr(),
-    ViteImageOptimizer({
-      png: {
-        quality: 70,
-      },
-      jpeg: {
-        quality: 70,
-      },
-      jpg: {
-        quality: 70,
-      },
-      webp: {
-        quality: 85,
-      },
-      avif: {
-        lossless: true,
-      },
-    }),
+    imageOptimizerPlugin(),
+    removeAttributes(),
   ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@assets': fileURLToPath(new URL('./src/shared/assets', import.meta.url)),
+      '@styles': fileURLToPath(new URL('./src/app/styles', import.meta.url)),
+      '@helpers': fileURLToPath(
+        new URL('./src/app/styles/helpers', import.meta.url),
+      ),
+    },
+  },
   build: {
     rollupOptions: {
-      input: sync('src/**/*.html'.replace(/\\/g, '/')),
+      input: sync('src/**/!(_)*.html'.replace(/\\/g, '/')),
       output: {
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.name;
