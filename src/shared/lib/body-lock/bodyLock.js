@@ -1,5 +1,5 @@
 /**
- * Внутреннее состояние
+ * Внутреннее состояние для защиты от спама
  * @private
  */
 let _bodyLockStatus = true;
@@ -27,7 +27,8 @@ const setBodyLockStatus = (delay) => {
  * @private
  * @returns {NodeListOf<Element>}
  */
-const getLockPaddingElements = () => document.querySelectorAll('[data-right-padding]');
+const getLockPaddingElements = () =>
+  document.querySelectorAll('[data-right-padding]');
 
 /**
  * Вычисляет ширину скроллбара в rem
@@ -36,7 +37,9 @@ const getLockPaddingElements = () => document.querySelectorAll('[data-right-padd
  */
 const getScrollbarWidthRem = () => {
   const scrollbarWidthPx = window.innerWidth - document.body.clientWidth;
-  const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  const rootFontSize = parseFloat(
+    getComputedStyle(document.documentElement).fontSize,
+  );
   return scrollbarWidthPx / rootFontSize + 'rem';
 };
 

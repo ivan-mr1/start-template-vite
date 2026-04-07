@@ -4,7 +4,9 @@
  * @param {number} volume - Громкость от 0 до 1
  */
 export const playSound = (path, volume = 0.4) => {
-  if (!path) return;
+  if (!path) {
+    return;
+  }
 
   const audio = new Audio(path);
   audio.volume = Math.max(0, Math.min(1, volume));

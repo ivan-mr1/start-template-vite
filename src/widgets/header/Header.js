@@ -1,4 +1,4 @@
-import { bodyLock, bodyUnlock } from '@/shared/lib/body-lock/bodyLock';
+import { bodyLock, bodyUnlock } from '@/shared/lib';
 
 class Header {
   hiddenHeader = true;

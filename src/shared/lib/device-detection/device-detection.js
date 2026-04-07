@@ -31,9 +31,10 @@ export const deviceDetection = {
       navigator.maxTouchPoints > 0 ||
       (navigator.msMaxTouchPoints && navigator.msMaxTouchPoints > 0);
 
-    const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent,
-    );
+    const isMobileUA =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      );
 
     return hasTouchScreen || isMobileUA;
   },
@@ -46,7 +47,8 @@ export const deviceDetection = {
   tablet() {
     const isTabletUA = /iPad|Android(?!.*Mobile)/i.test(navigator.userAgent);
     const isLargeTouch =
-      navigator.maxTouchPoints > 1 && window.matchMedia('(min-width: 768px)').matches;
+      navigator.maxTouchPoints > 1 &&
+      window.matchMedia('(min-width: 768px)').matches;
 
     return isTabletUA || isLargeTouch;
   },

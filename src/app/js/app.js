@@ -1,9 +1,11 @@
 'use strict';
 
-import pageNavigation from 'src/shared/lib/page-navigation/pageNavigation';
-import ScrollUpButton from 'src/shared/ui/scrollUpButton/ScrollUpButton';
+import { pageNavigation } from '@/shared/lib';
+import Header from '@/widgets/header/Header';
+import ScrollUpButton from '@/shared/ui/scrollUpButton/ScrollUpButton';
 
 window.addEventListener('DOMContentLoaded', () => {
   pageNavigation();
+  new Header();
   new ScrollUpButton();
 });

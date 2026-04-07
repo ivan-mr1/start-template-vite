@@ -22,7 +22,8 @@
   content: '';
   width: 20px;
   height: 20px;
-  background: url('/assets/img/components/spoller.svg') center center no-repeat;
+  background: url('@/shared/assets/img/components/spoller.svg') center center
+    no-repeat;
   transition: transform 0.5s;
 }
 

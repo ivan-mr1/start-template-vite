@@ -1,0 +1,22 @@
+@use '@helpers' as *;
+
+.header {
+  &__actions {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__github {
+    --size: #{rem(44)};
+
+    @include square(var(--size));
+
+    @include hover {
+      transform: scale(1.09);
+    }
+  }
+}

@@ -1,5 +1,5 @@
-import BaseComponent from '@js/BaseComponent';
-import MatchMedia from '@js/function/MatchMedia';
+import { BaseComponent } from '@/shared/lib';
+import { MatchMedia } from '@/shared/lib';
 
 const rootSelector = '[data-js-select]';
 

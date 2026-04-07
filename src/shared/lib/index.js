@@ -7,3 +7,8 @@ export { deviceDetection } from './device-detection/device-detection';
 export { generateId } from './id/generateId';
 export { formatPrice } from './number/formatPrice';
 export { playSound } from './play-sound/playSound';
+export { getBodyLockStatus, bodyLock, bodyUnlock } from './body-lock/bodyLock';
+export { default as BaseComponent } from './base-component/BaseComponent';
+export { pxToRem, MatchMedia } from './match-media/MatchMedia';
+export { locales } from './locates/locales';
+export { DateUpdater } from './date/DateUpdater';

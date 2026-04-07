@@ -14,7 +14,6 @@ const ignores = [
   '**/.idea/**',
   '**/.vscode/**',
   '**/.DS_Store',
-  'jsconfig.json',
   'postcss.config.js',
   'vite.config.js',
   '**/vite-plugins/**',

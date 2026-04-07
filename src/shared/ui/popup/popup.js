@@ -1,4 +1,4 @@
-import { getBodyLockStatus, bodyLock, bodyUnlock } from '@js/function/bodyLock';
+import { getBodyLockStatus, bodyLock, bodyUnlock } from '@/shared/lib';
 
 import PopupYoutube from './PopupYoutube';
 
